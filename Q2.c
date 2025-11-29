@@ -1,34 +1,17 @@
 #include <stdio.h>
 
-// Function to print an 8-bit binary number
-void printBinary(int n) {
-    for (int i = 7; i >= 0; i--) {
-        printf("%d", (n >> i) & 1);
-    }
-}
-
 int main() {
-    int num, shift;
+    int n, p;
 
-    printf("Enter a number (0-255): ");
-    scanf("%d", &num);
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    printf("Enter number of positions to shift: ");
-    scanf("%d", &shift);
+    printf("Enter positions to shift: ");
+    scanf("%d", &p);
 
-    int leftShift  = num << shift;       // Left shift
-    int rightShift = num >> shift;       // Right shift
-
-    printf("\nOriginal number: %d | Binary: ", num);
-    printBinary(num);
-
-    printf("\n\nAfter Left Shift  (%d << %d) : %d | Binary: ", num, shift, leftShift);
-    printBinary(leftShift & 0xFF);       // Mask to 8-bit display
-
-    printf("\nAfter Right Shift (%d >> %d) : %d | Binary: ", num, shift, rightShift);
-    printBinary(rightShift);
-
-    printf("\n");
+    printf("\nLeft Shift (%d << %d) = %d", n, p, n << p);
+    printf("\nRight Shift (%d >> %d) = %d\n", n, p, n >> p);
 
     return 0;
 }
+
